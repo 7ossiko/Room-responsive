@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="roomstyle.css">
+    <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
+    <title>Room!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  
+  <div class="entire">
+    <div class="title-container">
+      <div id="image-container">
+        <p class="text-overlay"><img src="logo.svg" alt="logo"> <a href="#" class="a">home</a>  <a href="#" class="a">shop</a>  <a href="#" class="a">about</a>   <a href="#" class="a">contact</a></p>
+      </div>
+        <div class="title" id="tit1">
+          <h2 id="title"></h2>
+          <p class="description" id="descrip"></p>
+          <a href="#" class="shop">SHOP NOW <img src="icon-arrow.svg" alt="arrow"></a>
+          <div class="button-container">
+            <button id="left" onclick="goLeft()"><img src="icon-angle-left.svg" alt="arrow left"></button>
+            <button id="right" onclick="goRight()"><img src="icon-angle-right.svg" alt="arrow right"></button>
+          </div>
+        </div> 
+    </div>
+    <div class="unchng">
+      <img src="bottomleft.jpg" alt="bottom left image" class="bottomleft">
+      <div class="title" id="tit2">
+        <h2 class="about">ABOUT OUR FURNITURE</h2>
+        <p class="description" style="padding: 40px;">Our multifunctional collection blends design and function to suit your
+          individual taste. Make each room unique, or pick a cohesive theme that best
+          express your interests and what inspires you. Find the furniture pieces you
+          need, from traditional to contemporary styles or anything in between.
+          Product specialists are available to help you create your dream space.</p>
+      </div>
+      <img src="bottom right.jpg" alt="bottom right image" class="bottomright">
+    </div> 
+  </div>
+      <script>
+        const imgdesk = ['desktop-image-hero-1.jpg', 'desktop-image-hero-2.jpg', 'desktop-image-hero-3.jpg'];
+        const imgmob=['mobile-image-hero-1.jpg','mobile-image-hero-2.jpg','mobile-image-hero-3.jpg'];
+        const title = ['Discover innovative ways to decorate', 'We are available all across the globe', 'Manufactured with the best materials'];
+        const desc = [
+          "We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.",
+          "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we're in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.",
+          "Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office."
+        ];
+        var img;
+        let currInd = 0;
+        function updateImage() {
+          if (window.innerWidth < 800) {
+            img = imgmob;
+          } else {
+            img = imgdesk;
+          }
+          document.getElementById('image-container').style.backgroundImage = `url(${img[currInd]})`;
+        }
+        window.addEventListener('resize', updateImage);
+        updateImage();
+        document.getElementById('image-container').style.backgroundImage = `url(${img[currInd]})`;
+        document.getElementById('title').innerHTML = title[currInd];
+        document.getElementById('descrip').innerHTML = desc[currInd];
+        function goRight() { 
+          if(currInd==2){
+            currInd=0;
+          }
+          else{
+            currInd++;
+          }
+          document.getElementById('title').innerHTML = title[currInd];
+          document.getElementById('descrip').innerHTML = desc[currInd];
+          updateImage();
+          document.getElementById('image-container').style.backgroundImage = `url(${img[currInd]})`;
+        }
+
+        function goLeft() {
+          if(currInd==0){
+            currInd=2;
+          }
+          else{
+            currInd--;
+          }
+          document.getElementById('title').innerHTML = title[currInd];
+          document.getElementById('descrip').innerHTML = desc[currInd];
+          updateImage();
+          document.getElementById('image-container').style.backgroundImage = `url(${img[currInd]})`;
+        }
+      </script>
+</body>
+</html>

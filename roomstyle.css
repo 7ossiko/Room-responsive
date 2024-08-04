@@ -1,0 +1,187 @@
+.a:hover{ 
+    border-bottom: 4px solid white;
+    padding-bottom: 6px;
+    border-radius: 4px;
+}
+.a{
+    color: white;
+    text-decoration-line: none;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+body {
+    margin: 0;
+    font-family: 'League Spartan', sans-serif;
+    font-weight:500;
+}  
+.entire {
+    overflow: hidden;
+    display: -moz-grid-group;
+    grid-auto-rows: 66.875% 33.125%;
+}
+#title{
+    padding:30px;
+    padding-bottom: 0px;
+    font-size: 25;
+}
+#image-container {
+    grid-column:1;
+    height:500px;
+    transition:0.2s ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-row: 1;
+} 
+.bottomleft{
+    grid-column: 1;
+    width:28.73563218390805vw;
+    height:100%;
+}
+.bottomright{
+    grid-column: 3;
+    width:31vw;
+    height: 100%;
+}
+.text-overlay {
+    padding: 35px;
+    color: white;
+    word-spacing: 30px;
+    font-size: 12px;
+    line-height: 30px;
+}
+#tit1{
+    grid-column: 2;
+    padding-right: 100px;
+    position: relative;
+    font-size: 25px;
+}
+#tit2{
+    grid-column: 2;
+}
+.title{
+    background-color: white;
+    width:100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+.button-container {
+    position: absolute;
+    bottom: 0;
+    width: 8.9vw;
+    height: 70px;
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+
+}
+#left{
+    grid-column: 1;
+}
+#right{
+    grid-column: 2;
+}
+.about{
+    letter-spacing: 5px;
+    font-size: 20px;
+    padding: 40px;
+    padding-bottom: 0px;
+}
+.description{
+    color:rgb(152, 152, 152) ;
+    font-size: 15px;
+    padding: 30px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    line-height: 1.5;
+    
+}
+#left,#right{
+    background-color: black;
+    border: none;
+    transition: 0.3s;
+}
+.shop{
+    color: black;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    font-size: 17px;
+    fill: black;
+    padding: 30px;
+    margin-bottom: 10px;
+    height: 30px;
+    width : 200px;
+    text-decoration-line: none;
+    transition: 0.3s;
+    /* position: relative; */
+}
+.shop:hover{
+    color:rgb(163, 163, 163);
+}
+.shop img{
+    vertical-align: middle;
+    padding-bottom: 5px;
+}
+#left:hover,#right:hover{
+    background-color:rgb(68, 68, 68) ;
+    border-color:rgb(68, 68, 68) ;
+    cursor: pointer;
+}
+.unchng{
+    display: grid;
+    grid-template-columns: 28.73563218390805% 40.22988505747126% 30.22988505747126%; 
+    grid-row: 2;
+}
+@media (max-width : 800px){
+    .title-container{
+        grid-template-columns: 1fr;
+    }
+    #image-container{
+        grid-column: 1;
+        position: relative;
+        height:500px;
+    }
+    #tit1{
+        grid-column: 1;
+        position: unset;
+        padding-bottom: 30px;
+    }
+    .unchng{
+        grid-template-columns: 1fr;
+        gap: 10px;
+        grid-row: 2;
+    }
+    .bottomleft{
+        grid-column: 1;
+        width: 100%;
+    }
+    #tit2{
+        grid-column: 1;
+    }
+    .bottomright{
+        grid-column: 1;
+        width: 100%;
+    }
+    .button-container{
+        top:0;
+        margin-top: 430px;
+        right: 0;
+        margin-right: 0;
+        width: 130px;
+    }
+    .description{
+        padding-bottom: 20px;
+        font-size: 15px;
+    }
+    .about{
+        font-size: 22px;
+    }
+    #title{
+        font-size: 30px;
+    }
+}
